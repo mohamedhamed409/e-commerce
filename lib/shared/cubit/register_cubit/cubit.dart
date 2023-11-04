@@ -1,14 +1,12 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/models/login_model.dart';
-import 'package:shop_app/modules/login/cubit/states.dart';
-import 'package:shop_app/modules/register/cubit/states.dart';
+import 'package:shop_app/shared/cubit/register_cubit/states.dart';
 import 'package:shop_app/shared/component/constants.dart';
 import 'package:shop_app/shared/network/remote/dio_helper.dart';
 
-import '../../../shared/network/end_points.dart';
+import '../../network/end_points.dart';
 
 class ShopRegisterCubit extends Cubit<ShopRegisterStates>
 {
@@ -37,10 +35,10 @@ class ShopRegisterCubit extends Cubit<ShopRegisterStates>
     {
    //   print(value.data);
       registerModel= ShopLoginModel.fromJson(value.data);
-      print('status of login model is >>>> ${registerModel!.status}');
+      debugPrint('status of login model is >>>> ${registerModel!.status}');
 
       // print(loginModel.data!.token); it cause problem because token cannot be found in invalid login that lead to error state is done and
-      print('message  ' + value.data['message']);
+      debugPrint('message  ' + value.data['message']);
       emit(ShopRegisterSuccessState(registerModel!));
     }).catchError((error){
       print(error.toString());

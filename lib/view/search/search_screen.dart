@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/modules/search/cubit/cubit.dart';
-import 'package:shop_app/modules/search/cubit/states.dart';
+import 'package:shop_app/view/search/cubit/states.dart';
+import 'package:shop_app/shared/cubit/search_cubit/cubit.dart';
 import 'package:shop_app/shared/component/component.dart';
 
 class SearchScreen extends StatelessWidget {
   var searchController=TextEditingController();
   var formKey=GlobalKey<FormState>();
-  // SearchScreen({Key? key}) : super(key: key);
+
+   SearchScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

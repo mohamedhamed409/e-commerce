@@ -2,15 +2,15 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/modules/login/shop_login_screen.dart';
-import 'package:shop_app/modules/register/cubit/states.dart';
+import 'package:shop_app/view/login/shop_login_screen.dart';
+import 'package:shop_app/shared/cubit/register_cubit/states.dart';
 import 'package:shop_app/shared/network/remote/dio_helper.dart';
 import '../../layout/shop_app/home_layout.dart';
 import '../../shared/component/component.dart';
 import '../../shared/component/constants.dart';
 import '../../shared/network/local/cache_helper.dart';
-import '../login/cubit/cubit.dart';
-import 'cubit/cubit.dart';
+import '../../shared/cubit/login_cubit/cubit.dart';
+import '../../shared/cubit/register_cubit/cubit.dart';
 
 class ShopRegisterScreen extends StatelessWidget {
   //const ShopRegisterScreen({Key? key}) : super(key: key);

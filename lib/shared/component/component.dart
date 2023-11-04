@@ -1,13 +1,13 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:shop_app/modules/login/cubit/cubit.dart';
-import 'package:shop_app/modules/webview_screen.dart';
+import 'package:shop_app/shared/cubit/login_cubit/cubit.dart';
+import 'package:shop_app/view/webview_screen.dart';
 import 'package:shop_app/shared/styles/colors.dart';
 
 import '../../layout/shop_app/cubit/cubit.dart';
 import '../../models/get_favoritesmodel.dart';
-import '../../modules/register/cubit/cubit.dart';
+import '../cubit/register_cubit/cubit.dart';
 
 
 Widget defaultTextFormField({

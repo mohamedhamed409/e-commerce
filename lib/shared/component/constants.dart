@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../modules/login/shop_login_screen.dart';
+import '../../view/login/shop_login_screen.dart';
 import '../network/local/cache_helper.dart';
 import 'component.dart';
 

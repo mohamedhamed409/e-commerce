@@ -3,10 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/models/login_model.dart';
-import 'package:shop_app/modules/login/cubit/states.dart';
 import 'package:shop_app/shared/network/remote/dio_helper.dart';
 
-import '../../../shared/network/end_points.dart';
+import '../../network/end_points.dart';
+import '../../../view/login/cubit/states.dart';
 
 class ShopLoginCubit extends Cubit<ShopLoginStates>
 {
@@ -25,17 +25,17 @@ class ShopLoginCubit extends Cubit<ShopLoginStates>
    'password':password,
   },).then((value)
   {
-   print(value.data);
+   debugPrint(value.data);
    loginModel= ShopLoginModel.fromJson(value.data);
-   print('status of login model is >>>> ${loginModel!.status}');
+   debugPrint('status of login model is >>>> ${loginModel!.status}');
 
    // print(loginModel.data!.token); it cause problem because token cannot be found in invalid login that lead to error state is done and
-   print(value.data['message']);
+   debugPrint(value.data['message']);
    emit(ShopLoginSuccessState(loginModel!));
   }).catchError((error){
-   print(error.toString());
+   debugPrint(error.toString());
    emit(ShopLoginErrorState(error.toString()));
-   print(error.toString());
+   debugPrint(error.toString());
 
   })
   ;

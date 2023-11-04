@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shop_app/layout/shop_app/home_layout.dart';
-import 'package:shop_app/modules/login/cubit/cubit.dart';
-import 'package:shop_app/modules/login/cubit/states.dart';
-import 'package:shop_app/modules/register/register_screen.dart';
+import 'package:shop_app/shared/cubit/login_cubit/cubit.dart';
+import 'package:shop_app/view/register/register_screen.dart';
 import 'package:shop_app/shared/component/component.dart';
 import 'package:shop_app/shared/component/constants.dart';
 import 'package:shop_app/shared/network/local/cache_helper.dart';
 import 'package:shop_app/shared/styles/colors.dart';
+
+import 'cubit/states.dart';
 
 class ShopLoginScreen extends StatelessWidget {
    ShopLoginScreen({Key? key}) : super(key: key);

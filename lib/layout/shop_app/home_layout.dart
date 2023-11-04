@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/layout/shop_app/cubit/cubit.dart';
 import 'package:shop_app/layout/shop_app/cubit/states.dart';
-import 'package:shop_app/modules/login/shop_login_screen.dart';
-import 'package:shop_app/modules/search/search_screen.dart';
+import 'package:shop_app/view/login/shop_login_screen.dart';
+import 'package:shop_app/view/search/search_screen.dart';
 import 'package:shop_app/shared/component/component.dart';
 import 'package:shop_app/shared/network/local/cache_helper.dart';
 
