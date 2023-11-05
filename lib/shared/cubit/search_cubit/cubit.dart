@@ -4,7 +4,7 @@ import 'package:shop_app/shared/network/end_points.dart';
 import 'package:shop_app/shared/network/remote/dio_helper.dart';
 
 import '../../component/constants.dart';
-import '../../../view/search/cubit/states.dart';
+import 'states.dart';
 
 class SearchCubit extends Cubit<SearchStates>
 {

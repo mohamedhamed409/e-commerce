@@ -1,16 +1,14 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shop_app/layout/shop_app/home_layout.dart';
 import 'package:shop_app/shared/cubit/login_cubit/cubit.dart';
 import 'package:shop_app/view/register/register_screen.dart';
 import 'package:shop_app/shared/component/component.dart';
 import 'package:shop_app/shared/component/constants.dart';
 import 'package:shop_app/shared/network/local/cache_helper.dart';
-import 'package:shop_app/shared/styles/colors.dart';
 
-import 'cubit/states.dart';
+import '../../shared/cubit/login_cubit/states.dart';
 
 class ShopLoginScreen extends StatelessWidget {
    ShopLoginScreen({Key? key}) : super(key: key);
@@ -20,7 +18,6 @@ class ShopLoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var emailController=TextEditingController();
     var passwordController=TextEditingController();
-  //  var formKey=GlobalKey<FormState>();
     return BlocProvider(
       create: (BuildContext context)=>ShopLoginCubit(),
       child: BlocConsumer<ShopLoginCubit,ShopLoginStates>(
@@ -36,7 +33,7 @@ class ShopLoginScreen extends StatelessWidget {
                   value: state.modelLogin.data!.token,
               ).then((value){
                 navigateAndFinish(context,
-                  ShopLayout(),
+                 const ShopLayout(),
                 );
               });
               showToast(text: state.modelLogin.message!, state: ToastStates.success);
@@ -63,16 +60,16 @@ class ShopLoginScreen extends StatelessWidget {
                     children: [
                       Text(
                         'LOGIN',
-                        style: Theme.of(context).textTheme.headline4!.copyWith(fontWeight: FontWeight.bold,color: Colors.black),
+                        style: Theme.of(context).textTheme.headlineMedium!.copyWith(fontWeight: FontWeight.bold,color: Colors.black),
 
                       ),
                       Text(
                         'login now to browse our hot offers',
-                        style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           color: Colors.grey,
                         ),
                       ),
-                      SizedBox(height: 30,),
+                     const SizedBox(height: 30,),
                       defaultTextFormField(
 
                           controller: emailController,
@@ -134,12 +131,12 @@ class ShopLoginScreen extends StatelessWidget {
                         //   myColor: defaultColor,
                          ),
 
-                         fallback: (context)=>Center(child: CircularProgressIndicator(),),),
+                         fallback: (context)=>const Center(child: CircularProgressIndicator(),),),
                       const SizedBox(height: 15,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Don\'t Have An Account ?',),
+                          const Text('Don\'t Have An Account ?',),
                           defaultTextButton(function: ()
                           {
                             navigateAndFinish(context, ShopRegisterScreen(),);

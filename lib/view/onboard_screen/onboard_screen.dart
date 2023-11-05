@@ -92,7 +92,7 @@ void submit()
                 physics: const BouncingScrollPhysics(),
               ),
             ),
-            SizedBox(
+         const   SizedBox(
               height: 40.0,
             ),
             Row(
@@ -100,7 +100,7 @@ void submit()
                 SmoothPageIndicator(
                   controller: boardController,
                   count: boarding.length,
-                  effect:  ExpandingDotsEffect(
+                  effect: const ExpandingDotsEffect(
                     activeDotColor: defaultColor,
                     dotColor: Colors.grey,
                     dotHeight: 10.0,
@@ -138,22 +138,22 @@ void submit()
         children: [
           Expanded(
             child: Image(
-              image: AssetImage('${model.image}'),
+              image: AssetImage(model.image),
             ),
           ),
           Text(
-            '${model.title}',
-            style: TextStyle(
+            model.title,
+            style:const TextStyle(
               fontSize: 24.0,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15.0,
           ),
           Text(
-            '${model.body}',
-            style: TextStyle(
+            model.body,
+            style:const  TextStyle(
               fontSize: 14.0,
               fontWeight: FontWeight.bold,
             ),
